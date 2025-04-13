@@ -4,17 +4,6 @@ import { useEffect, useState, useRef } from "react";
 import MenuOverlay from "./MenuOverlay";
 import HeaderMiddleContent from "./HeaderMiddleContent";
 
-const categories = [
-  {
-    value: "KOREAN",
-    label: "KR",
-  },
-  {
-    value: "ENGLISH",
-    label: "EN",
-  },
-];
-
 const Header = () => {
   const [isTop, setIsTop] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
