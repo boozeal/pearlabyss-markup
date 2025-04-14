@@ -38,7 +38,7 @@ const EventContainer = () => {
       <section className="flex mt-[22px] min-[767px]:hidden justify-center">
         <EventCarousel eventList={EventThumbnailData} />
       </section>
-      <section className="max-w-[1440px] mx-auto mt-[100px] mb-[200px] flex justify-between max-[1024px]:hidden">
+      <section className="max-w-[1440px] mx-auto mt-[100px] mb-[200px] flex justify-between max-[1024px]:hidden gap-5 px-5">
         {EventThumbnailData.map((item, index) => (
           <EventThumbnail
             key={index}
