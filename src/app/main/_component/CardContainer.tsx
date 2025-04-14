@@ -2,6 +2,7 @@
 
 import CardThumbnail from "./CardThumbnail";
 import { CardThumbnailProps } from "@/app/model/thumbnail";
+import MobileCardThumbnail from "./MobileCardThumbnail";
 
 const CardThumbnailData: CardThumbnailProps[] = [
   {
@@ -38,17 +39,35 @@ const CardThumbnailData: CardThumbnailProps[] = [
 
 const CardContainer = () => {
   return (
-    <section className="max-w-[1440px] mx-auto mt-[100px] flex wrap justify-between">
-      {CardThumbnailData.map((item, index) => (
-        <CardThumbnail
-          key={index}
-          image={item.image}
-          title={item.title}
-          description={item.description}
-          index={index}
-        />
-      ))}
-    </section>
+    <>
+      <section className="max-w-[1440px] relative mx-auto mt-[100px] min-[767px]:hidden flex flex-col justify-between">
+        <img src="/asset/image/m_spr_main_category_bg.jpg"></img>
+        <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-between">
+          {CardThumbnailData.map((item, index) => (
+            <div
+              key={index}
+              className="flex-1 flex flex-col text-white items-center justify-center gap-[14px]"
+            >
+              <p className="text-[24px] font-bold transform group-hover:-translate-y-8 transition-transform duration-600">
+                {item.title}
+              </p>
+              <p className="text-[18px] font-semibold">{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section className="max-w-[1440px] mx-auto mt-[100px] hidden min-[767px]:flex justify-between">
+        {CardThumbnailData.map((item, index) => (
+          <CardThumbnail
+            key={index}
+            image={item.image}
+            title={item.title}
+            description={item.description}
+            index={index}
+          />
+        ))}
+      </section>
+    </>
   );
 };
 

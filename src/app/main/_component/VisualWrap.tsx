@@ -4,7 +4,7 @@ import React from "react";
 
 const VisualWrap = () => {
   return (
-    <section className="relative w-full overflow-hidden">
+    <section className="relative w-full min-w-[240px] overflow-hidden">
       <img
         className="object-cover min-[1024px]:hidden min-h-[570px]"
         src="https://s1.pearlcdn.com/pearlabyss/Upload/thumbnail/20218/26/NL08EF6JXMN6STON20210826164410295.png"
@@ -36,13 +36,13 @@ const VisualWrap = () => {
           src="https://s1.pearlcdn.com/global_static/video/kor_landing_loop.mp4"
         />
       </video>
-      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center max-[1024px]:gap-7 gap-10  w-full h-full">
+      <div className="absolute z-10 flex flex-col items-center justify-center max-[1024px]:gap-7 gap-10 w-full bottom-[50%] transform translate-y-[80%] px-10">
         <div className="title_wrap">
           <img src="/asset/icon/blackdesert_logo_kr.png" alt="Black Desert" />
         </div>
         <div className="btn_wrap">
           <div>
-            <button className="group relative overflow-hidden w-[310px] h-[75px] max-[1024px]:w-[238px] max-[1024px]:h-[57px] text-center text-white hover:text-black rounded-[2px] bg-white/35">
+            <button className="group relative overflow-hidden w-[310px] h-[75px] max-[1024px]:w-[238px] max-[1024px]:h-[57px] text-center text-white hover:text-black rounded-[2px] bg-white/35 mx-10">
               <span className="absolute inset-0 bg-white/50 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out z-0" />
               <span className="relative z-10 text-[18px]">자세히 보기</span>
             </button>

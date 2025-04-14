@@ -32,15 +32,15 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed top-0 w-full transition-all duration-100 z-50 px-6
+        className={`fixed top-0 w-full min-w-[240px]transition-all duration-100 z-50 px-6
         ${
           isTop ? "text-white" : "bg-white"
-        } hover:bg-white hover:text-black hover:h-[342px] h-17`}
+        } hover:bg-white hover:text-black hover:h-[342px] h-17 max-[768px]:h-13`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         <nav>
-          <div className="h-full min-h-17 flex items-center justify-between text-[15px] font-medium">
+          <div className="h-full min-h-17 max-[768px]:min-h-13 flex items-center justify-between text-[15px] font-medium">
             <div className="flex-1">
               <div className="max-[1024px]:hidden">
                 {isHovered || !isTop ? (
@@ -61,10 +61,20 @@ const Header = () => {
                   </div>
                 )}
               </div>
-              <button className="min-[1024px]:hidden w-7 h-5 flex flex-col justify-between items-center">
-                <span className="block w-full h-[2px] bg-[url('/asset/icon/common_pattern_bg.jpg')] bg-no-repeat bg-cover"></span>
-                <span className="block w-full h-[2px] bg-[url('/asset/icon/common_pattern_bg.jpg')] bg-no-repeat bg-cover"></span>
-                <span className="block w-full h-[2px] bg-[url('/asset/icon/common_pattern_bg.jpg')] bg-no-repeat bg-cover"></span>
+              <button className="min-[1024px]:hidden w-full max-w-7 max-[1024px]:max-w-6 h-4 flex flex-col justify-between items-center">
+                {isTop ? (
+                  <>
+                    <span className="block w-full h-[2px] bg-white"></span>
+                    <span className="block w-full h-[2px] bg-white"></span>
+                    <span className="block w-full h-[2px] bg-white"></span>
+                  </>
+                ) : (
+                  <>
+                    <span className="block w-full h-[2px] bg-[url('/asset/icon/common_pattern_bg.jpg')] bg-no-repeat bg-cover"></span>
+                    <span className="block w-full h-[2px] bg-[url('/asset/icon/common_pattern_bg.jpg')] bg-no-repeat bg-cover"></span>
+                    <span className="block w-full h-[2px] bg-[url('/asset/icon/common_pattern_bg.jpg')] bg-no-repeat bg-cover"></span>
+                  </>
+                )}
               </button>
             </div>
             <div className="max-[1024px]:hidden flex mx-auto">
@@ -73,13 +83,13 @@ const Header = () => {
             <div className="flex min-[1024px]:hidden">
               {isHovered || !isTop ? (
                 <img
-                  className="w-[150px]"
+                  className="w-[130px]"
                   src="/asset/icon/cm_bi_black.svg"
                   alt="Pearl Abyss"
                 />
               ) : (
                 <img
-                  className="w-[150px]"
+                  className="w-[130px]"
                   src="/asset/icon/cm_bi_white.svg"
                   alt="Pearl Abyss"
                 />

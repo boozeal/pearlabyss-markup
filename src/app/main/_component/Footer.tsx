@@ -38,48 +38,92 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full text-black pt-15 flex flex-col border-t border-b border-[#E5E5E5]">
-      <div className="w-full flex flex-col">
-        <div className="w-full border-b border-[#E5E5E5] pb-[70px]">
-          <div className="w-full flex justify-between max-w-[1220px] mx-auto px-5">
-            {FooterTextData.map((section, index) => (
-              <FooterText
-                key={index}
-                title={section.title}
-                items={section.items}
-                link={section.link}
-              />
-            ))}
+    <footer>
+      <div className="w-full flex flex-col min-[1024px]:hidden items-center">
+        <div className="w-full flex">
+          <div className="w-full border-b border-[#E5E5E5] pb-[70px] hidden">
+            <div className="w-full flex justify-between max-w-[1220px] mx-auto px-5">
+              {FooterTextData.map((section, index) => (
+                <FooterText
+                  key={index}
+                  title={section.title}
+                  items={section.items}
+                  link={section.link}
+                />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-      <div className="flex w-full max-w-[1220px] px-5 h-[78px] mx-auto justify-between">
-        <div className="flex items-center gap-9">
+
+        <div className="flex items-center justify-center gap-4 w-full h-[75px] pt-[14px] pb-[18px] border border-[#E0E0E0]">
           <img
-            className="w-[126px] mx-auto"
-            src="/asset/icon/cm_bi_black.svg"
-            alt="Pearl Abyss"
-          />
-          <p className="text-[#6A6A6A]/50">
-            © Pearl Abyss Corp. All Rights Reserved.
-          </p>
-        </div>
-        <div className="flex items-center gap-4">
-          <img
-            className="w-[40px] mx-auto"
+            className="w-[40px]"
             src="/asset/icon/icn_footer_facebook_round.svg"
             alt="Pearl Abyss"
           />
           <img
-            className="w-[40px] mx-auto"
+            className="w-[40px]"
             src="/asset/icon/icn_footer_linkedin_round.svg"
             alt="Pearl Abyss"
           />
           <img
-            className="w-10 mx-auto"
+            className="w-10"
             src="/asset/icon/icn_footer_youtube_round.svg"
             alt="Pearl Abyss"
           />
+        </div>
+        <img
+          className="w-[120px] mx-auto mt-[17px] mb-[10px]"
+          src="/asset/icon/cm_bi_black.svg"
+          alt="Pearl Abyss"
+        />
+        <p className="text-[#6A6A6A]/50 mb-[13px]">
+          © Pearl Abyss Corp. All Rights Reserved.
+        </p>
+      </div>
+      <div className="w-full text-black pt-15 flex flex-col border-t border-b border-[#E5E5E5] max-[1024px]:hidden">
+        <div className="w-full flex flex-col">
+          <div className="w-full border-b border-[#E5E5E5] pb-[70px]">
+            <div className="w-full flex justify-between max-w-[1220px] mx-auto px-5">
+              {FooterTextData.map((section, index) => (
+                <FooterText
+                  key={index}
+                  title={section.title}
+                  items={section.items}
+                  link={section.link}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="flex w-full max-w-[1220px] px-5 h-[78px] mx-auto justify-between">
+          <div className="flex items-center gap-9">
+            <img
+              className="w-[126px] mx-auto"
+              src="/asset/icon/cm_bi_black.svg"
+              alt="Pearl Abyss"
+            />
+            <p className="text-[#6A6A6A]/50">
+              © Pearl Abyss Corp. All Rights Reserved.
+            </p>
+          </div>
+          <div className="flex items-center gap-4">
+            <img
+              className="w-[40px] mx-auto"
+              src="/asset/icon/icn_footer_facebook_round.svg"
+              alt="Pearl Abyss"
+            />
+            <img
+              className="w-[40px] mx-auto"
+              src="/asset/icon/icn_footer_linkedin_round.svg"
+              alt="Pearl Abyss"
+            />
+            <img
+              className="w-10 mx-auto"
+              src="/asset/icon/icn_footer_youtube_round.svg"
+              alt="Pearl Abyss"
+            />
+          </div>
         </div>
       </div>
     </footer>

@@ -1,5 +1,6 @@
 "use client";
 
+import EventCarousel from "./EventCarousel";
 import EventThumbnail from "./EventThumbnail";
 import { EventThumbnailProps } from "@/app/model/thumbnail";
 
@@ -33,17 +34,22 @@ const EventThumbnailData: EventThumbnailProps[] = [
 
 const EventContainer = () => {
   return (
-    <section className="max-w-[1440px] mx-auto mt-[100px] mb-[200px] flex wrap justify-between">
-      {EventThumbnailData.map((item, index) => (
-        <EventThumbnail
-          key={index}
-          image={item.image}
-          title={item.title}
-          description={item.description}
-          index={index}
-        />
-      ))}
-    </section>
+    <div className="w-full">
+      <section className="flex mt-[22px] min-[767px]:hidden justify-center">
+        <EventCarousel eventList={EventThumbnailData} />
+      </section>
+      <section className="max-w-[1440px] mx-auto mt-[100px] mb-[200px] flex justify-between max-[1024px]:hidden">
+        {EventThumbnailData.map((item, index) => (
+          <EventThumbnail
+            key={index}
+            image={item.image}
+            title={item.title}
+            description={item.description}
+            index={index}
+          />
+        ))}
+      </section>
+    </div>
   );
 };
 
