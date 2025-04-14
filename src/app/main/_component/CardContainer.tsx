@@ -2,7 +2,6 @@
 
 import CardThumbnail from "./CardThumbnail";
 import { CardThumbnailProps } from "@/app/model/thumbnail";
-import MobileCardThumbnail from "./MobileCardThumbnail";
 
 const CardThumbnailData: CardThumbnailProps[] = [
   {
