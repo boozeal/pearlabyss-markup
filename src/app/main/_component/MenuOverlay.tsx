@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import HeaderAccordion from "./HeaderAccordion";
-import { useEffect } from "react";
 interface MenuOverlayProps {
   onClose: () => void;
 }
