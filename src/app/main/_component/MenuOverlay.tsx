@@ -1,50 +1,54 @@
+"use client";
+
+import Image from "next/image";
+import HeaderAccordion from "./HeaderAccordion";
+import { useEffect } from "react";
 interface MenuOverlayProps {
   onClose: () => void;
 }
 
 const MenuOverlay = ({ onClose }: MenuOverlayProps) => {
   return (
-    <div className="w-full max-w-[1440px] mx-auto fixed inset-0  z-50">
-      <div className="h-[500px] lg:h-[328px] bg-[#151311]/90">
-        <nav
-          className={`px-4 sm:px-6 lg:px-8 transition-opacity duration-300 border-b border-[#FFFFFF80]`}
-        >
-          <div className="flex items-center justify-between h-17 text-[15px] font-medium">
-            <div className="flex-1 min-w-[120px]">
-              <div className="flex space-x-2">
-                <img src="/asset/icon/logo-white.svg" alt="logo" width={36} />
-                <div className="flex flex-col gap-1 items-center justify-center">
-                  <img
-                    src="/asset/icon/logo-text-white.svg"
-                    alt="logo"
-                    width={90}
-                  />
-                  <img
-                    src="/asset/icon/logo-text-korean-white.svg"
-                    alt="logo"
-                    width={47}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="flex-1 flex items-center justify-end space-x-10">
-              <div className="flex items-center space-x-2 text-[14px] leading-[1.2] font-normal min-w-[120px]">
-                <a href="/login" className="text-white">
-                  로그인
-                </a>
-                <a className="text-[13px]">|</a>
-                <a href="/signup" className="text-white">
-                  회원가입
-                </a>
-              </div>
-              <button className="text-white cursor-pointer" onClick={onClose}>
-                <img src="/asset/icon/close.svg" alt="close" width={21} />
-              </button>
+    <div className="w-full max-w-[375px] fixed inset-0 z-50 transition-all duration-300 ease-in-out px-5 bg-white overflow-y-auto">
+      <div className="w-full flex flex-col gap-6">
+        <div className="w-full relative h-[50px] flex items-center justify-center">
+          <button
+            onClick={onClose}
+            className="absolute left-0 top-[17px] w-4 h-4" // 버튼 크기 조정
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16" // SVG 너비 조정
+              height="16" // SVG 높이 조정
+              viewBox="0 0 22 22"
+              fill="none"
+            >
+              <rect
+                x="1.80762"
+                y="0.393448"
+                width="27.9998"
+                height="2"
+                transform="rotate(45 1.80762 0.393448)"
+                fill="black"
+              />
+              <rect
+                x="0.393555"
+                y="20.1923"
+                width="27.9998"
+                height="2"
+                transform="rotate(-45 0.393555 20.1923)"
+                fill="black"
+              />
+            </svg>
+          </button>
+          <div className="">
+            <div className="w-[130px] h-[15px] relative">
+              <Image src="/asset/icon/cm_bi_black.svg" alt="Pearl Abyss" fill />
             </div>
           </div>
-        </nav>
-        <div className="px-4 sm:px-6 lg:px-10 pt-6 lg:pt-10 pb-8 lg:pb-15">
-          <div className="flex flex-col lg:flex-row justify-between w-full gap-6 lg:gap-0"></div>
+        </div>
+        <div>
+          <HeaderAccordion />
         </div>
       </div>
     </div>
