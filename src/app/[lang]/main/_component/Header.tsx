@@ -38,70 +38,78 @@ const Header = () => {
     <>
       {/* pc 헤더 */}
       <header
-        className={`fixed group top-0 overflow-hidden w-full min-w-[240px] transition-all duration-300 z-50 px-6
-        ${
-          isTop ? "text-white" : "bg-white"
-        } hidden min-[1024px]:block hover:text-black`}
+        className={`fixed group top-0 overflow-hidden w-full min-w-[240px] z-50 
+         hidden min-[1024px]:block ${isTop && "text-white"} hover:text-black`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <span className="absolute inset-0 bg-white -translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out z-[-1] h-[342px]" />
-        <nav className="h-17">
+        <span className="absolute inset-0 bg-white -translate-y-full group-hover:translate-y-0 transition-transform duration-400 ease-in-out z-[-1]" />
+        {(!isTop || isHovered) && (
+          <hr className="absolute top-[67px] w-full h-[1px] bg-[#969696]" />
+        )}
+        <nav
+          className={`h-17 ${
+            !isTop && "bg-white"
+          } px-6 hover:h-[342px] transition-all duration-300 ease-in-out`}
+        >
           {/* Section 1 */}
-          <div className="h-full flex justify-between items-center text-[15px] font-medium">
-            <div className="flex-1">
-              <Link href="/main">
-                {isHovered || !isTop ? (
-                  <div className="w-[170px]">
-                    <img
-                      className="w-[154px] mx-auto"
-                      src="/asset/icon/cm_bi_black.svg"
-                      alt="Pearl Abyss"
-                    />
-                  </div>
-                ) : (
-                  <div className="w-[170px]">
-                    <img
-                      className="w-[154px] mx-auto"
-                      src="/asset/icon/cm_bi_white.svg"
-                      alt="Pearl Abyss"
-                    />
-                  </div>
-                )}
-              </Link>
+          <div className="h-full flex justify-between items-start text-[15px] font-medium">
+            <div className="flex-1 flex justify-start">
+              <div className="h-17 flex items-center">
+                <Link href="/main">
+                  {isHovered || !isTop ? (
+                    <div className="w-[170px]">
+                      <img
+                        className="w-[154px] mx-auto"
+                        src="/asset/icon/cm_bi_black.svg"
+                        alt="Pearl Abyss"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-[170px]">
+                      <img
+                        className="w-[154px] mx-auto"
+                        src="/asset/icon/cm_bi_white.svg"
+                        alt="Pearl Abyss"
+                      />
+                    </div>
+                  )}
+                </Link>
+              </div>
             </div>
             {/* Section 2 */}
             <div className="flex mx-auto">
-              <HeaderMiddleContent isHovered={isHovered} />
+              <HeaderMiddleContent />
             </div>
             {/* Section 3 */}
             <div className="flex flex-1 items-center justify-end">
-              <div className="hidden xl:flex items-center space-x-5 text-[14px] font-bold">
-                <a className="">KOR</a>
-                <a className="text-[#999999] text-[13px]">|</a>
-                <a className="text-[#999999] hover:text-black">ENG</a>
-                <a className="text-[#999999] text-[13px]">|</a>
-                <a className="text-[#999999] hover:text-black mr-3">JPN</a>
-              </div>
-              <div className="xl:hidden">
-                {isHovered || !isTop ? (
-                  <img
-                    src="/asset/icon/m_icn_lang.svg"
-                    alt="Language Icon"
-                    className="w-6 h-6"
-                  />
-                ) : (
-                  <img
-                    src="/asset/icon/m_icn_lang_white.svg"
-                    alt="Language Icon"
-                    className="w-6 h-6"
-                  />
-                )}
+              <div className="h-17 flex items-center">
+                <div className="hidden xl:flex items-center space-x-5 text-[14px] font-bold">
+                  <a className="">KOR</a>
+                  <a className="text-[#999999] text-[13px]">|</a>
+                  <a className="text-[#999999] hover:text-black">ENG</a>
+                  <a className="text-[#999999] text-[13px]">|</a>
+                  <a className="text-[#999999] hover:text-black mr-3">JPN</a>
+                </div>
+                <div className="xl:hidden">
+                  {isHovered || !isTop ? (
+                    <img
+                      src="/asset/icon/m_icn_lang.svg"
+                      alt="Language Icon"
+                      className="w-6 h-6"
+                    />
+                  ) : (
+                    <img
+                      src="/asset/icon/m_icn_lang_white.svg"
+                      alt="Language Icon"
+                      className="w-6 h-6"
+                    />
+                  )}
+                </div>
               </div>
             </div>
           </div>
         </nav>
-        {isHovered && <div className="h-[246px]"></div>}
       </header>
       {/* 모바일 헤더 */}
       <header
@@ -137,13 +145,13 @@ const Header = () => {
             <div className="flex min-[1024px]:hidden">
               {!isTop ? (
                 <img
-                  className="w-[130px]"
+                  className="w-[130px] h-[15px]"
                   src="/asset/icon/cm_bi_black.svg"
                   alt="Pearl Abyss"
                 />
               ) : (
                 <img
-                  className="w-[130px]"
+                  className="w-[130px] h-[15px]"
                   src="/asset/icon/cm_bi_white.svg"
                   alt="Pearl Abyss"
                 />
