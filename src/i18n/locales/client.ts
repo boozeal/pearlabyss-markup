@@ -42,7 +42,6 @@ export function useTranslation<
   ns?: Ns,
   options?: UseTranslationOptions<KPrefix>
 ): UseTranslationResponse<FallbackNs<Ns>, KPrefix> {
-  1;
   const [cookies, setCookie] = useCookies([cookieName]);
   const ret = useTranslationOrg(ns, options);
   const { i18n } = ret;
