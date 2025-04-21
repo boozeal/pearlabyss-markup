@@ -9,7 +9,7 @@ export default function Footer() {
     },
     {
       title: "게임",
-      items: ["검은사막", "검은사막 모바일", "도꺠비", "플랜8"],
+      items: ["검은사막", "검은사막 모바일", "도깨비", "플랜8"],
       link: "기업윤리 신고센터",
     },
     {
