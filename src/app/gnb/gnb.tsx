@@ -1,5 +1,7 @@
 "use client";
 
-import { useState, useRef } from "react";
-import Image from "next/image";
-import Link from "next/link";
+const Gnb = () => {
+  return <div>Gnb</div>;
+};
+
+export default Gnb;

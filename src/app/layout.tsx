@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
 import { languages } from "@/i18n/settings";
-import { dir } from "i18next";
 
 const notoSans = Noto_Sans_KR({
   subsets: ["latin"],
@@ -16,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 export const generateStaticParams = async () => {
-  return languages.map((lng: any) => ({ lng }));
+  return languages.map((lng: string) => ({ lng }));
 };
 
 export default function RootLayout({

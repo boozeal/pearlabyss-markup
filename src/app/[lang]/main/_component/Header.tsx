@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import MenuOverlay from "./MenuOverlay";
 import HeaderMiddleContent from "./HeaderMiddleContent";
 import Link from "next/link";
@@ -11,7 +11,7 @@ const Header = () => {
   const timeoutIdRef = useRef<NodeJS.Timeout | null>(null);
   const [isHovered, setIsHovered] = useState(false);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY === 0) {
         setIsTop(true);
