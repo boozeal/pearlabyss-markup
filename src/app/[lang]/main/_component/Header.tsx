@@ -39,7 +39,9 @@ const Header = () => {
       {/* pc 헤더 */}
       <header
         className={`fixed group top-0 overflow-hidden w-full min-w-[240px] z-50 
-         hidden min-[1024px]:block ${isTop && "text-white"} hover:text-black`}
+         hidden min-[1024px]:block ${
+           isTop && "text-white"
+         } hover:text-black hover:bg-white`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
