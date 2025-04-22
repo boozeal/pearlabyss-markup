@@ -8,4 +8,4 @@ tailwind css
 
 AOS 라이브러리를 통한 스크롤 이벤트
 
-next-app-dir-i18n을 통한 internationalization
+next-app-dir-i18n을 통한 internationalization(라우팅)
